@@ -20,13 +20,16 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    overflow-y: hidden; /* Remove scroll vertical em algumas resoluções. */
+
     header{
         height: 15vh;
         width: 100%;
         display: flex;
         justify-content: end;
         align-items: center;
-        a{
+        a.button{
             margin-right: 5%;
             text-decoration: none;
             color: white;
@@ -34,7 +37,7 @@ body{
             font-size: 1.2em;
             padding: 16px 24px;
             border-radius: 16px;
-            border: 1px solid white;
+            border: 0.5px solid white;
             text-align: center;
 
             background-color: rgba(255, 255, 255, 0.05);

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios JS</title>
+    <link rel="stylesheet" href="./css/BuscarCEP.css">
+</head>
+
+<body>
+    <header>
+        <a class="button" href="./index.html">
+            <span class="seta">
+
+            </span>
+            Voltar
+        </a>
+    </header>
+    <main>
+        <h1>Buscar CEP</h1>
+        <div class="caixa-form">
+            <form>
+                <div class="frame">
+                    <div class="input-usuario">
+                        <label for="cep">CEP</label>
+                        <input id="cep" type="text" placeholder="Digite seu CEP" maxlength="9">
+                    </div>
+                    <div class="input-usuario">
+                        <label for="cep">Estado</label>
+                        <input id="estado" type="text" placeholder="Estado" disabled>
+                    </div>
+                </div>
+                <div class="frame">
+                    <div class="input-usuario">
+                        <label for="">Cidade</label>
+                        <input id="cidade" type="text" placeholder="Cidade" disabled>
+                    </div>
+                    <div class="input-usuario">
+                        <label for="">Bairro</label>
+                        <input id="bairro" type="text" placeholder="Bairro" disabled>
+                    </div>
+                </div>
+                <div class="frame">
+                    <div class="input-usuario">
+                        <label for="">Logradouro</label>
+                        <input id="logradouro" type="text" placeholder="Logradouro" disabled>
+                    </div>
+                    <div class="input-usuario">
+                        <label for="">Número</label>
+                        <input id="numero" type="text" placeholder="Número" disabled>
+                    </div>
+                </div>
+                <div class="frame textarea-content">
+                    <div class="input-usuario" id="text-area">
+                        <label for="complemento">Complemento</label>
+                        <textarea id="complemento" placeholder="Ex: Torre 2, Apartamento 55" disabled></textarea>
+                    </div>
+                </div>
+                <input id="btn-buscar" type="button" value="Buscar">
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
