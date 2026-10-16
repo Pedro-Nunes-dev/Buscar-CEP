@@ -12,26 +12,47 @@
 }
 
 body{
-    background-image: url('../img/background.jpg');
+    background-image: url('../img/background (1).jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-x: clip;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     header{
-        height: 10vh;
-        background-color: burlywood;
+        height: 15vh;
         width: 100%;
         display: flex;
         justify-content: end;
         align-items: center;
         a{
             margin-right: 5%;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2em;
+            padding: 16px 24px;
+            border-radius: 16px;
+            border: 1px solid white;
+            text-align: center;
+
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(10px);
+
+            transition: all 0.3s ease;
+            &:hover{
+                transform: scale(1.1);
+                box-shadow: 0 0 20px 7px rgba(255, 255, 255, 0.25);
+                background-color: white;
+                color: black;
+            }
         }
     }
     main{
-        height: 90vh;
+        width: 100%;
+        height: 85vh;
         h1{
             color: white;
             font-size: 4em;
@@ -46,13 +67,68 @@ body{
             img{
                 height: 80%;
                 border-radius: 24px;
+                transition: all 0.3s ease;
+                &:hover{
+                    box-shadow: 0 0 25px 8px rgba(247, 222, 29, 0.6);
+                }
             }
             margin-bottom: 1%;
         }
         .infinityCarousel{
-            background-color: red;
+            --logo-gap: clamp(2rem, 5vw, 5rem);
             width: 100%;
             height: 30%;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+
+            .carrosselTrack{
+                display: flex;
+                width: max-content;
+                will-change: transform;
+            }
+
+            &.is-ready .carrosselTrack{
+                animation: carrossel-infinito var(--duracao-carrossel) linear infinite;
+            }
+
+            .grupo{
+                display: flex;
+                flex: 0 0 auto;
+                align-items: center;
+                gap: var(--logo-gap);
+                padding-right: var(--logo-gap);
+
+                .logo{
+                    display: flex;
+                    flex: 0 0 clamp(6rem, 12vw, 10rem);
+                    justify-content: center;
+
+                    img{
+                        display: block;
+                        width: 100%;
+                        height: clamp(70px, 8vw, 110px);
+                        object-fit: contain;
+                    }
+                }
+            }
         }
+    }
+}
+
+@keyframes carrossel-infinito{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .infinityCarousel .carrosselTrack{
+        animation: none;
     }
 }
